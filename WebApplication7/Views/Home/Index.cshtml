@@ -3,23 +3,24 @@
 }
 
 
-@*if(@ViewBag.Message!=null){
 
-}*@
 
 <form method="post" asp-action="SendSms" asp-controller="Home">
     <div>
-        <input type="number" class="form-control" />
+        <input type="tel" name="phoneNumber" value="+994559516864" class="form-control" />
+    </div>
+    <div>
+        <label>Message:</label>
+        <input type="text" name="messageBody" class="form-control" />
     </div>
     <div>
         <button class="btn btn-primary form-control">Sendsms</button>
     </div>
 </form>
 
-@*<a asp-action="SendSms" asp-controller="Home">Send Sms</a>*@
 
 
-    <h1>@ViewBag.Message</h1>
+
 
 @if (Context.User.Identity.IsAuthenticated)
 {
