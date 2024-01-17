@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@*if(@ViewBag.Message!=null){
+
+}*@
+
+<form method="post" asp-action="SendSms" asp-controller="Home">
+    <div>
+        <input type="number" class="form-control" />
+    </div>
+    <div>
+        <button class="btn btn-primary form-control">Sendsms</button>
+    </div>
+</form>
+
+@*<a asp-action="SendSms" asp-controller="Home">Send Sms</a>*@
+
+
+    <h1>@ViewBag.Message</h1>
+
+@if (Context.User.Identity.IsAuthenticated)
+{
+    <br />
+    <h2>Welcome @User.Identity.Name</h2>
+    <a asp-controller="Login" asp-action="Logout">Logout</a>
+}
